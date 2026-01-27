@@ -1,10 +1,14 @@
-function checkStatus() {
-  const code = document.getElementById("orderCode").value;
-  const status = document.getElementById("status");
+function check() {
+  const code = document.getElementById("code").value;
+  const result = document.getElementById("result");
 
-  if (code === "TEST123") {
-    status.textContent = "Status: Drukuje się 🔄";
-  } else {
-    status.textContent = "Nie znaleziono zamówienia ❌";
+  const order = orders.find(o => o.code === code);
+
+  if (!order) {
+    result.textContent = "❌ Nie znaleziono zamówienia";
+    return;
   }
+
+  result.textContent =
+    `Status: ${order.status}\nEtap: ${order.step}\nInfo: ${order.comment}`;
 }
