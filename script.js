@@ -1,3 +1,4 @@
+alert("JS DZIAŁA");
 function check() {
   const code = document.getElementById("code").value;
   const result = document.getElementById("result");
