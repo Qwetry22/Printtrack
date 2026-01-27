@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <title>PrintTrack</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<html>
 <body>
-  <h1>PrintTrack</h1>
-  <p>Sprawdź status swojego wydruku 3D:</p>
-  
-  <input type="text" id="orderCode" placeholder="Wpisz kod">
-  <button onclick="checkStatus()">Sprawdź</button>
 
-  <p id="status"></p>
+<h2>PrintTrack – sprawdź status</h2>
 
-  <script src="script.js"></script>
+<input id="code" placeholder="Wpisz kod">
+<button onclick="check()">Sprawdź</button>
+
+<pre id="result"></pre>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
