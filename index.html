@@ -2,24 +2,31 @@
 <html>
 <head>
   <title>PrintTrack</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>PrintTrack</h1>
+  <input type="text" id="orderId" placeholder="Wpisz numer zamówienia">
+  <button onclick="checkStatus()">Sprawdź</button>
 
-<h2>PrintTrack – sprawdź status zamówienia</h2>
+  <script>
+    let orders = [];
 
-<input id="code" placeholder="Wpisz kod">
-<button onclick="check()">Sprawdź</button>
+    async function loadOrders() {
+      const response = await fetch('orders.json'); // tu podaj link z GitHub Pages jeśli zdalnie
+      orders = await response.json();
+    }
 
-<pre id="result"></pre>
+    function checkStatus() {
+      const id = document.getElementById('orderId').value;
+      const order = orders.find(o => o.Id === id);
+      if(order) {
+        alert(`Status: ${order.Status}\nOpis: ${order.Opis}`);
+      } else {
+        alert('Nie znaleziono zamówienia');
+      }
+    }
 
-<script src="data.js"></script>
-<script src="script.js"></script>
-
-<h3>Złóż zamówienie</h3>
-
-<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=T0JSWKWpqka9xGmOxKvmXqYrEIpSjQZKhjxwusi--UlUMDZGQjlINElSVlRZQk5GVzRNTzM5NU1HUi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-
-
+    window.onload = loadOrders;
+  </script>
 </body>
 </html>
