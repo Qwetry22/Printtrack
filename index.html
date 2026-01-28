@@ -12,7 +12,8 @@
     let orders = [];
 
     async function loadOrders() {
-      const response = await fetch('orders.json'); // tu podaj link z GitHub Pages jeśli zdalnie
+      const response = await fetch('https://TwojNick.github.io/printtrack/orders.json');
+       // tu podaj link z GitHub Pages jeśli zdalnie
       orders = await response.json();
     }
 
