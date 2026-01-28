@@ -1,4 +1,3 @@
-alert("JS DZIAŁA");
 function check() {
   const code = document.getElementById("code").value;
   const result = document.getElementById("result");
@@ -11,5 +10,5 @@ function check() {
   }
 
   result.textContent =
-    `Status: ${order.status}\nEtap: ${order.step}\nInfo: ${order.comment}`;
+    `Opis: ${order.description}\nStatus: ${order.status}\nEtap: ${order.step}\nInfo: ${order.comment}`;
 }
