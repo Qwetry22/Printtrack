@@ -12,9 +12,9 @@
     let orders = [];
 
     async function loadOrders() {
-      const response = await fetch('https://Qwetry22.github.io/printtrack/orders.json');
-       // tu podaj link z GitHub Pages jeśli zdalnie
-      orders = await response.json();
+    const response = await fetch('https://Qwetry22.github.io/printtrack/orders.json');
+
+    orders = await response.json();
     }
 
     function checkStatus() {
